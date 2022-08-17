@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple React fragments</title>
+</head>
+<body>
+<div id="root"></div>
+<!-- React and Babel libraries -->
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  function CatFragment({ name }) {
+    return (
+            <React.Fragment>
+              <h1>The cat's name is {name}</h1>
+              <p>He's good.</p>
+            </React.Fragment>
+    )
+  }
+  function CatFragmentShorter({ name }) {
+      return (
+          <>
+              <h1>The cat's name is {name}</h1>
+              <p>He's good.</p>
+          </>
+      )
+  }
+  ReactDOM.render(
+      [ <CatFragment name="Jungle" />, <CatFragmentShorter name="Shorter"/> ],
+      document.getElementById("root")
+  )
+</script>
+</body>
+</html>
